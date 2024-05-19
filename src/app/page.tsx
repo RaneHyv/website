@@ -1,14 +1,43 @@
 import { Container } from "@/components/Container";
+import { Progress } from "@/components/Progress";
 import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
 import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
+import { BiLogoTypescript } from "react-icons/bi";
 import { BsFillBriefcaseFill } from "react-icons/bs";
-import { FaGraduationCap } from "react-icons/fa6";
+import { DiPhp } from "react-icons/di";
+import { FaStar } from "react-icons/fa";
+import { FaGolang, FaGraduationCap, FaPython } from "react-icons/fa6";
+import { LiaJava } from "react-icons/lia";
+import { RiJavascriptFill } from "react-icons/ri";
+import { TbBrandCpp, TbBrandKotlin } from "react-icons/tb";
 
 import logoINTK from "@/images/logos/intk.svg";
 import logoKamk from "@/images/logos/kamk.png";
 import logoKao from "@/images/logos/kao.png";
 import logoSommelo from "@/images/logos/sommelo.png";
+
+interface Role {
+  company: string;
+  title: string;
+  logo?: ImageProps["src"];
+  href?: string;
+  start: string | { label: string; dateTime: string };
+  end: string | { label: string; dateTime: string };
+  singleDate?: boolean;
+}
+
+interface Skill {
+  name: React.ReactNode;
+  title: string;
+  value: number;
+}
+
+const ICONCLASS =
+  "h-6 w-6 flex-none stroke-zinc-400 dark:stroke-zinc-500" as const;
+
+const LIGHTICONCLASS =
+  "h-6 w-6 flex-none stroke-zinc-500 dark:stroke-zinc-400" as const;
 
 function SocialLink({
   icon: Icon,
@@ -26,16 +55,6 @@ function SocialLink({
       />
     </Link>
   );
-}
-
-interface Role {
-  company: string;
-  title: string;
-  logo?: ImageProps["src"];
-  href?: string;
-  start: string | { label: string; dateTime: string };
-  end: string | { label: string; dateTime: string };
-  singleDate?: boolean;
 }
 
 function Role({ role }: { role: Role }) {
@@ -130,7 +149,7 @@ function Education() {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <FaGraduationCap className="h-6 w-6 flex-none stroke-zinc-400 dark:stroke-zinc-500" />
+        <FaGraduationCap className={ICONCLASS} />
         <span className="ml-3">Education</span>
       </h2>
       <ol className="mt-6 space-y-4">
@@ -196,7 +215,7 @@ function Resume() {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BsFillBriefcaseFill className="h-6 w-6 flex-none stroke-zinc-400 dark:stroke-zinc-500" />
+        <BsFillBriefcaseFill className={ICONCLASS} />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
@@ -204,6 +223,7 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
+      {/* TODO: Add CV download */}
       {/* <Button href="#" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
@@ -212,10 +232,79 @@ function Resume() {
   );
 }
 
+function Skills() {
+  const skills: Skill[] = [
+    {
+      name: <RiJavascriptFill className={ICONCLASS} />,
+      title: "JavaScript",
+      value: 90,
+    },
+    {
+      name: <BiLogoTypescript className={ICONCLASS} />,
+      title: "TypeScript",
+      value: 80,
+    },
+    {
+      name: <FaPython className={ICONCLASS} />,
+      title: "Python",
+      value: 65,
+    },
+    {
+      name: <TbBrandCpp className={LIGHTICONCLASS} />,
+      title: "C/C++",
+      value: 50,
+    },
+    {
+      name: <FaGolang className={ICONCLASS} />,
+      title: "Go",
+      value: 45,
+    },
+    {
+      name: <LiaJava className={LIGHTICONCLASS} />,
+      title: "Java",
+      value: 40,
+    },
+    {
+      name: <DiPhp className={LIGHTICONCLASS} />,
+      title: "PHP",
+      value: 40,
+    },
+    {
+      name: <TbBrandKotlin className={LIGHTICONCLASS} />,
+      title: "Kotlin",
+      value: 35,
+    },
+  ];
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <FaStar className={ICONCLASS} />
+        <span className="ml-3">Skills</span>
+      </h2>
+      <ul className="mt-6 space-y-4">
+        {skills.map((skill, skillIndex) => (
+          <li key={skillIndex} className="flex items-center">
+            <div
+              className="flex-none w-14 text-zinc-500 dark:text-zinc-400"
+              title={skill.title}
+            >
+              {skill.name}
+            </div>
+            <div className="flex-auto">
+              <Progress value={skill.value} />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default async function Home() {
   return (
     <>
-      <Container className="mt-9">
+      <Container className="mt-12">
         <div className="max-w-2xl">
           {/* TODO: Fix descriptions/texts */}
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
@@ -239,8 +328,11 @@ export default async function Home() {
           </div>
         </div>
       </Container>
-      <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-x-10 gap-y-20 lg:max-w-none lg:grid-cols-2">
+      <Container className="mt-12">
+        <Skills />
+      </Container>
+      <Container className="mt-12">
+        <div className="mx-auto grid  grid-cols-1 gap-x-10 gap-y-12 lg:max-w-none lg:grid-cols-2">
           <div className="space-y-10">
             <Education />
           </div>
