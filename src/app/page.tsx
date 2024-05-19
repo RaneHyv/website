@@ -1,3 +1,4 @@
+import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Progress } from "@/components/Progress";
 import { GitHubIcon, LinkedInIcon } from "@/components/SocialIcons";
@@ -38,6 +39,19 @@ const ICONCLASS =
 
 const LIGHTICONCLASS =
   "h-6 w-6 flex-none stroke-zinc-500 dark:stroke-zinc-400" as const;
+
+function ArrowDownIcon(props: React.ComponentPropsWithoutRef<"svg">) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 function SocialLink({
   icon: Icon,
@@ -223,11 +237,12 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      {/* TODO: Add CV download */}
-      {/* <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button> */}
+      <a href="/rane-hyvonen-cv.pdf" download="rane-hyvonen-cv.pdf">
+        <Button variant="secondary" className="group mt-6 w-full">
+          Download CV
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </a>
     </div>
   );
 }
