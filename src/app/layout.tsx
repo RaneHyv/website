@@ -1,41 +1,41 @@
-import { type Metadata } from 'next'
+import { type Metadata } from "next";
 
-import { Providers } from '@/app/providers'
-import { Layout } from '@/components/Layout'
+import { Providers } from "@/app/providers";
+import { Layout } from "@/components/Layout";
 
-import '@/styles/tailwind.css'
+import "@/styles/tailwind.css";
 
 const YearsAgo = new Date().getFullYear() - 2014;
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Rane Hyvönen',
-    default:
-      'Rane Hyvönen - Software engineer',
+    template: "%s - Rane Hyvönen",
+    default: "Rane Hyvönen - Software engineer",
   },
-  description:
-    'I’m Rane, a software engneer from Utrecht.' + 
-    "I enjoy exploring and learning about new technologies and hardware. " + 
-    `My interest in software development started ${YearsAgo} years ago in Vocational College ` +
-    "by learning very basic C/C++ with Borland. From that point onwards I slowly " + 
-    "started to learn more languages and started to enjoy programming more and more. " + 
-    "A combination of interests in hardware, smart solutions and programming led me to "+
-    "enroll at Kajaani University of Applied Sciences in the Intelligent Systems sector." +
-    `Personally, I value attention to detail in any work. The phrase "Function over form" ` +
-    "is quite close to my personal goals in software design. It is nice to have sites and " + 
-    "software that looks pretty but it has to work for every device as intended. Otherwise, " + 
-    "what is the point?",
+  description: `I’m Rane, a software engineer from Utrecht. I enjoy 
+  exploring and learning about new technologies and hardware. 
+  My interest in software development started ${YearsAgo} years ago 
+  in Vocational College by learning very basic C/C++ with Borland. 
+  From that point onwards I slowly started to learn more languages and 
+  started to enjoy programming more and more. A combination of interests 
+  in hardware, smart solutions and programming led me to enroll at 
+  Kajaani University of Applied Sciences in the Intelligent Systems 
+  sector.Personally, I value attention to detail in any work. The phrase 
+  "Function over form" is quite close to my personal goals in software 
+  design. It is nice to have sites and software that looks pretty 
+  but it has to work for every device as intended. Otherwise, 
+  what is the point?`,
   alternates: {
     types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+      "application/rss+xml": `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
     },
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
@@ -47,5 +47,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  )
+  );
 }

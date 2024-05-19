@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "npm run lint-code && npm run lint-style",
+    "lint:fix": "npm run lint-code:fix && npm run lint-style:fix",
+    "lint-code": "eslint --ext .tsx --cache .",
+    "lint-code:fix": "npm run lint-code -- --fix",
+    "lint-style": "prettier --cache --check .",
+    "lint-style:fix": "prettier --cache --write ."
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -37,7 +42,7 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sharp": "0.33.1"
   }
