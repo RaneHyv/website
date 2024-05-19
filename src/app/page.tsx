@@ -321,13 +321,23 @@ export default async function Home() {
     <>
       <Container className="mt-12">
         <div className="max-w-2xl">
-          {/* TODO: Fix descriptions/texts */}
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software engineer, tech enthusiast & music enjoyer.
+            Software Engineer with a passion for automation and cutting-edge
+            technology.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Rane, a software engineer from Utrecht. I enjoy exploring and
-            learning about new technologies and hardware.
+            I’m Rane, a software engineer passionate about technology,
+            specializing in creating creative solutions for different needs and
+            automating tasks to boost efficiency—because who doesn’t love
+            getting more done by being a little lazy?. In my spare time, I
+            immerse myself in gaming, explore the latest tech advancements, and
+            enjoy tinkering with computers & computer peripherals. I also find
+            joy in music, from experimenting with music gear to listening to my
+            favorite tunes both during my free time and while working. I believe
+            in the power of technology to simplify our lives and enhance our
+            experiences, and I’m committed to using technology to simplify life
+            and enrich experiences, aiming to make a positive impact both
+            professionally and personally.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

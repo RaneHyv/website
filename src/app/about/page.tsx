@@ -76,23 +76,40 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Rane Hyvönen. I build projects and solutions for the web.
+            I&apos;m Rane Hyvönen, a Tech Enthusiast and Problem Solver.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              {/* TODO: Fix descriptions */}I enjoy exploring and learning about
-              new technologies and hardware. My interest in software development
-              started {YearsAgo} years ago in Vocational College by learning
-              very basic C/C++ with Borland. From that point onwards I slowly
-              started to learn more languages and started to enjoy programming
-              more and more. A combination of interests in hardware, smart
-              solutions and programming led me to enroll at Kajaani University
-              of Applied Sciences in the Intelligent Systems sector. Personally,
-              I value attention to detail in any work. The phrase &quot;Function
-              over form&quot; is quite close to my personal goals in software
-              design. It is nice to have sites and software that looks pretty
-              but it has to work for every device as intended. Otherwise, what
-              is the point?
+              I&apos;m Rane Hyvönen, a Tech Enthusiast and Problem Solver. As a
+              software engineer, I&apos;m deeply invested in the world of
+              technology, constantly seeking new ways to innovate and improve.
+              My specialty lies in crafting ingenious solutions that address a
+              variety of needs, whether it’s streamlining workflows or solving
+              complex problems. Automation is my game – I love finding ways to
+              make processes more efficient because who doesn&apos;t enjoy
+              getting more done with less effort?
+            </p>
+            <p>
+              When I&apos;m not knee-deep in code, you&apos;ll likely find me
+              lost in the immersive worlds of gaming, exploring virtual
+              landscapes, and conquering digital challenges. Gaming isn&apos;t
+              just a hobby for me – it&apos;s a way to unwind and stay sharp.
+              But it&apos;s not all about gaming. I&apos;m also deeply
+              passionate about exploring the forefront of technology. I&apos;m
+              always on the lookout for the latest gadgets and innovations. From
+              the newest processors to the sleekest and most efficient laptops,
+              I love diving into the specs and exploring what makes each device
+              unique.
+            </p>
+            <p>
+              In an unsurprising turn of events, I also have a thing when it
+              comes to peripherals. Whether it&apos;s building custom rigs or
+              exploring hardware to fit a need or squeeze out every last drop of
+              performance, I&apos;m always up for a tinkering session. And of
+              course, there&apos;s music – an integral part of my life, setting
+              the tone for every moment. From experimenting with different audio
+              setups to exploring playlists for every occasion, I find endless
+              joy in the world of sound
             </p>
           </div>
         </div>

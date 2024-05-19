@@ -24,10 +24,12 @@ export default function Skills() {
             web service backend.
           </Tool>
           <Tool title="Go">
-            Go seems really simple and straght forward language in it&apos;s
-            design and syntax. I personally find it admireable to strive for
-            simplicity and what I have seen and heard about Go, it seems like a
-            language that I would enjoy to learn and use.
+            I&apos;ve had the opportunity to work with Go a bit, and I find it
+            incredibly exciting. Its simple design and straightforward syntax
+            are truly admirable. From what I&apos;ve experienced and learned
+            about Go so far, it seems like a language that aligns well with my
+            preferences. I&apos;m eager to deepen my knowledge and proficiency
+            in it.
           </Tool>
           <Tool title="Rust">
             What can I say... it has been the talk of the town for a while now
