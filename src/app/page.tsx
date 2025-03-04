@@ -79,7 +79,7 @@ function Role({ role }: { role: Role }) {
 
   const endLabel = typeof role.end === "string" ? role.end : role.end.label;
   const endDate = typeof role.end === "string" ? role.end : role.end.dateTime;
-  const singleDate = role.singleDate ? true : false;
+  const singleDate = !!role.singleDate;
   const link = role.href ? role.href : undefined;
 
   return (
@@ -136,11 +136,11 @@ function Education() {
     {
       company: "Kajaani University of Applied Sciences (KAMK)",
       title: `A training that specializes in device design and device-based programming.
-        The main focus of the studies is on the design and implementation of 
-        intelligent systems electronics, telecommunications, databases and user interfaces. 
-        In education, the application areas of intelligent systems are e.g. well-being, 
-        exercise, games, smart environments and industry. An engineer who has graduated 
-        is an expert who is able to apply his or her skills in hardware and software design 
+        The main focus of the studies is on the design and implementation of
+        intelligent systems electronics, telecommunications, databases and user interfaces.
+        In education, the application areas of intelligent systems are e.g. well-being,
+        exercise, games, smart environments and industry. An engineer who has graduated
+        is an expert who is able to apply his or her skills in hardware and software design
         tasks in various fields, including the gaming industry.`,
       href: "https://www.kamk.fi/en",
       logo: logoKamk,
@@ -149,9 +149,9 @@ function Education() {
     },
     {
       company: "Kainuu Vocational College (KAO), Kajaani",
-      title: `ICT technician is able to perform the installation, commissioning, 
-        programming, configuration and maintenance of computer and communication equipment. 
-        In addition, he is competent in testing, maintenance, repair and commissioning of 
+      title: `ICT technician is able to perform the installation, commissioning,
+        programming, configuration and maintenance of computer and communication equipment.
+        In addition, he is competent in testing, maintenance, repair and commissioning of
         electronic equipment.`,
       href: "https://www.kao.fi/",
       logo: logoKao,
@@ -179,8 +179,8 @@ function Resume() {
   let resume: Array<Role> = [
     {
       company: "INTK",
-      title: `I have worked on various projects as a software engineer. Ranging 
-        from web development to task automation. For the most cases I have been 
+      title: `I have worked on various projects as a software engineer. Ranging
+        from web development to task automation. For the most cases I have been
         responsible for the whole development process from start to finish.`,
       href: "https://www.intk.com/en",
       logo: logoINTK,
@@ -193,9 +193,9 @@ function Resume() {
     },
     {
       company: "Kainuun Tietomikro Oy",
-      title: `Kainuun Tietomikro Oy is a local computer shop in Kuhmo. 
-        I was worked on pc repair and maintenance at hardware and software/os level. 
-        Other responsibilitys I had were customer service, taking care of the shop, 
+      title: `Kainuun Tietomikro Oy is a local computer shop in Kuhmo.
+        I was worked on pc repair and maintenance at hardware and software/os level.
+        Other responsibilitys I had were customer service, taking care of the shop,
         selling products and services.`,
       href: "https://www.tietomikro.com/",
       start: "2016",
@@ -204,9 +204,9 @@ function Resume() {
     },
     {
       company: "Videokliniikka Ky",
-      title: `Videokliniikka is a local electronic appliance repair shop in Kuhmo. 
-        I was responsible for diagnosing and repairing appliances that were brought 
-        in. Now and then I would handle customer support and help the owner as an 
+      title: `Videokliniikka is a local electronic appliance repair shop in Kuhmo.
+        I was responsible for diagnosing and repairing appliances that were brought
+        in. Now and then I would handle customer support and help the owner as an
         assistant.`,
       href: "https://www.videoklinikka.net/",
       start: "2015",
@@ -215,8 +215,8 @@ function Resume() {
     },
     {
       company: "Sommelo",
-      title: `Sommelo is a yearly music event in Kuhmo. I was part of the support 
-        staff before the event. Doing the actual event I worked as part of the 
+      title: `Sommelo is a yearly music event in Kuhmo. I was part of the support
+        staff before the event. Doing the actual event I worked as part of the
         customer support team.`,
       logo: logoSommelo,
       href: "https://sommelo.net/en/",
@@ -329,7 +329,7 @@ export default async function Home() {
             I’m Rane, a software engineer passionate about technology,
             specializing in creating creative solutions for different needs and
             automating tasks to boost efficiency—because who doesn’t love
-            getting more done by being a little lazy?. In my spare time, I
+            getting more done by being a little lazy? In my spare time, I
             immerse myself in gaming, explore the latest tech advancements, and
             enjoy tinkering with computers & computer peripherals. I also find
             joy in music, from experimenting with music gear to listening to my
